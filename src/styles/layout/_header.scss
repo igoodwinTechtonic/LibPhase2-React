@@ -1,0 +1,67 @@
+@use 'sass:map';
+@import '../abstracts/colors';
+@import '../abstracts/mixins';
+@import '../base/typography';
+
+@media screen and (min-width: map-get($map: $breakpoints, $key: 'phone')) {
+    .header {
+        // Base formatting for header
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 5fr 1fr;
+        grid-template-rows: 1fr;
+        background-color: map-get($map: $colors, $key: 'btn');
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        
+        // The Library
+        &__title {
+            margin: 0;
+            padding: 20px;
+            font-family: $font-header;
+            font-size: 1.5rem;
+        }
+        // Placement of hamburger icon
+        &__menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20px;
+
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+
+        // &__search-form {
+        //     background-color: lightgrey;
+        //     visibility: visible;
+        // }
+        // Hide the search bar on mobile
+        &__search-form {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: map-get($map: $breakpoints, $key: 'laptop')) {
+    .header {
+        grid-template-columns: 190px 1fr 1fr;
+        // grid-template-rows: 1fr;
+
+        &__search-form {
+            display: block;
+            background-color: rgba($color: #000000, $alpha: 0.0);
+            justify-self: flex-end;
+        }
+    }
+}
+@media screen and (min-width: map-get($map: $breakpoints, $key: 'desktop')) {
+    // .header {
+    //     grid-template-columns: 250px 1fr 1fr;
+
+    // }
+}
+

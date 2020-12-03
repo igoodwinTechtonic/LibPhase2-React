@@ -1,0 +1,12 @@
+// Fonts and styling
+$font-header: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+$font-title: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+
+%titles {
+    font-family: $font-title;
+    font-style: italic;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}

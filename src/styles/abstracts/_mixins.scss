@@ -1,0 +1,16 @@
+$breakpoints: (
+    'phone': 300px,
+    'phone-landscape': 560px,
+    'laptop': 768px,
+    'desktop': 1024px,
+);
+$max-breakpoints: (
+    'phone': 480px,
+    'laptop': 1024px,
+    'desktop': 1200px,
+);
+$map-grid-props: (
+    'sm': 'phone',
+    'md': 'laptop',
+    'lg': 'desktop',
+);

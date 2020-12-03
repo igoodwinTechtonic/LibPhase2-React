@@ -1,0 +1,70 @@
+@use 'sass:map';
+@import '../abstracts/colors';
+@import '../abstracts/mixins';
+@import '../base/typography';
+
+.btn {
+  color: white;
+  background-color: map-get($map: $colors, $key: "btn");
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  width: 12rem;
+  padding: 1rem;
+  font-size: large;
+  text-align: center;
+  text-decoration: none;
+  font: 1.2rem $font-title;
+
+  &:hover {
+    background-color: map-get($map: $colors, $key: "btn-focus");
+  }
+  &:focus {
+    background-color: map-get($map: $colors, $key: "btn-focus");
+  }
+  &--back {
+    background-color: map-get($map: $colors, $key: "btn-grey");
+    color: black;
+    border-radius: 0.5rem;
+
+    &:hover,
+    :focus {
+      color: white;
+    }
+  }
+  &--add-image {
+    background-color: grey;
+  }
+}
+
+@media screen and (min-width: map-get($map: $breakpoints, $key: "phone")) {
+  .btn__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-auto-flow: row;
+    justify-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+}
+@media screen and (min-width: map-get($map: $breakpoints, $key: "laptop")) {
+  .btn__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 0;
+    justify-items: stretch;
+  }
+  .btn--edit {
+    justify-self: flex-end;
+  }
+  .btn--back {
+    justify-self: flex-start;
+  }
+  .btn {
+    &--add-image {
+      grid-column-start: 4;
+      grid-row-start: 4;
+    }
+  }
+}

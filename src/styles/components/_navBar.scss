@@ -1,0 +1,25 @@
+@use 'sass:map';
+@import '../abstracts/colors';
+@import '../abstracts/mixins';
+@import '../base/typography';
+
+/* Base styling */
+@media screen and (min-width: map-get($map: $breakpoints, $key: 'phone')) {
+    .header {
+        &__nav-menu {
+            display: none;
+            padding: 0;
+        }
+        &__link {
+            color: map-get($map: $colors, $key: 'header');
+            text-decoration: none;
+        }
+        &__link-text {
+            text-decoration: none;
+            list-style: none;
+        }
+        // &__link-text:hover {
+        //     color: map-get($map: $colors, $key: 'text-hover');
+        // }
+    }
+}
