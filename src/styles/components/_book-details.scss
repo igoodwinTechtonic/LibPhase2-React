@@ -1,0 +1,116 @@
+@use 'sass:map';
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
+@import "../base/typography";
+
+@media screen and (min-width: map-get($map: $breakpoints, $key: "phone")) {
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    flex: 1;
+    margin-top: 68px;
+  }
+  .book-details {
+    &__title {
+      &--detail,
+      &--add {
+        font-family: $font-title;
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+    &__img {
+      &--container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      &--cover {
+        width: 70%;
+        align-self: center;
+        object-fit: contain;
+        max-height: 50vh;
+        padding-bottom: 1rem;
+      }
+    }
+    &__author {
+      &--details {
+        font-family: $font-title;
+        text-align: center;
+      }
+    }
+    &__details {
+      font-family: $font-title;
+      text-align: center;
+      font-style: italic;
+    }
+    &__description {
+      padding: 2px 1rem 2px 1rem;
+      font-size: 1.2rem;
+      margin: 0.5rem;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: map-get($map: $breakpoints, $key: "laptop")) {
+  .details-grid {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    // Somehow have to get rows to be initially sized based on content and NOT grow
+    grid-template-rows: 75px 92px 60px 86px auto auto;
+    grid-auto-flow: row;
+    margin-right: 2rem;
+    margin-top: 0;
+  }
+  .book-details {
+    &__title {
+      &--detail {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        text-align: left;
+      }
+    }
+    &__img {
+      &--container {
+        display: flex;
+        justify-content: center;
+        grid-row: 2 / 6;
+        grid-column-start: 1;
+        align-self: flex-start;
+        padding: 1.5rem 0;
+      }
+      &--cover {
+        padding-bottom: 1rem;
+      }
+    }
+    &__author {
+      &--details {
+        text-align: left;
+        grid-row-start: 3;
+        grid-column-start: 2;
+      }
+    }
+    &__details {
+      text-align: left;
+
+      &--container {
+        grid-row-start: 4;
+        grid-column-start: 2;
+      }
+    }
+    &__description {
+      padding: 2px 1rem 2px 1rem;
+      font-size: 1.2rem;
+      margin: 0.5rem;
+      text-align: left;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    &__description--container {
+      grid-row: 5;
+      grid-column-start: 2;
+    }
+  }
+}

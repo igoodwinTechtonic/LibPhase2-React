@@ -3,6 +3,8 @@
 
 // Any component or module .scss
 
+@use 'book-details';
+@use 'book-form';
 @use 'bookshelf-card';
 @use 'btn';
 @use 'hamburger-btn';

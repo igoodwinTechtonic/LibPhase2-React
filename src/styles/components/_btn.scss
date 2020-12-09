@@ -1,7 +1,7 @@
 @use 'sass:map';
-@import '../abstracts/colors';
-@import '../abstracts/mixins';
-@import '../base/typography';
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
+@import "../base/typography";
 
 .btn {
   color: white;
@@ -38,33 +38,39 @@
 }
 
 @media screen and (min-width: map-get($map: $breakpoints, $key: "phone")) {
-  .btn__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-auto-flow: row;
-    justify-items: center;
-    gap: 2rem;
-    margin-top: 3rem;
+  .btn {
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-auto-flow: row;
+      justify-items: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    &--add-edit,
+    &--home {
+      justify-self: center;
+    }
   }
 }
 @media screen and (min-width: map-get($map: $breakpoints, $key: "laptop")) {
   .btn__grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-top: 0;
-    justify-items: stretch;
-  }
-  .btn--edit {
-    justify-self: flex-end;
-  }
-  .btn--back {
-    justify-self: flex-start;
+    grid-row-start: 6;
+    grid-column: 1 / -1;
   }
   .btn {
     &--add-image {
       grid-column-start: 4;
       grid-row-start: 4;
+    }
+    &--home {
+      justify-self: flex-start;
+    }
+    &--add-edit {
+      justify-self: flex-end;
     }
   }
 }

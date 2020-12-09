@@ -7,11 +7,11 @@
 @media screen and (min-width: map-get($map: $breakpoints, $key: "phone")) {
   .footer {
     grid-area: footer;
-    margin: 0;
-    background-color: map-get($map: $colors, $key: 'text-background');
+    // Makes the footer always at the bottom of the page in flexbox
+    margin-top: auto;
+    background-color: map-get($map: $colors, $key: "text-background");
     text-align: center;
     padding: 15px;
-    max-height: 20px;
     font-family: $font-header;
   }
 }
