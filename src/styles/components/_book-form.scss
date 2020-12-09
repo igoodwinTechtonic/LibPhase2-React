@@ -1,0 +1,147 @@
+@use 'sass:map';
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
+@import "../base/typography";
+
+@media screen and (min-width: map-get($map: $breakpoints, $key: "phone")) {
+  .edit-grid {
+    padding-top: 75px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 1rem;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__label {
+      font-size: 1.3rem;
+      font-family: $font-title;
+    }
+    &__input {
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      min-width: 80vw;
+      border-radius: 5px;
+      border: 1px solid black;
+
+      &--synopsis {
+        min-height: 10rem;
+        font-family: Arial, Helvetica, sans-serif;
+        resize: none;
+      }
+      &--published {
+        min-width: 50vw;
+        margin-bottom: 1rem;
+      }
+      &--pages {
+        min-width: 40vw;
+
+        &::-webkit-inner-spin-button {
+          opacity: 1;
+        }
+      }
+    }
+    &__img {
+      max-width: 12em;
+      max-height: 16em;
+
+      &--placeholder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-width: 12em;
+        min-height: 16em;
+        margin: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        background-color: lightgray;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($map: $breakpoints, $key: "laptop")) {
+  .book__title {
+    &--detail {
+      text-align: left;
+    }
+    &--add {
+      text-align: center;
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 2fr;
+    grid-template-rows: repeat(7, auto);
+    grid-auto-flow: column;
+    justify-items: center;
+    gap: 1rem;
+    margin: 2rem 2rem 0 2rem;
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+
+      &--published {
+        grid-column: 2 / 4;
+        grid-row-start: 4;
+        justify-self: stretch;
+      }
+      &--pages {
+        grid-column: 2 / 4;
+        grid-row-start: 5;
+        justify-self: stretch;
+      }
+    }
+    &__label {
+      align-self: center;
+      grid-column-start: 1;
+    }
+    &__input {
+      grid-column: 2 / 4;
+      min-width: 100%;
+
+      &--synopsis {
+        min-height: 10rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      &--published {
+        min-width: 10vw;
+        max-width: 20vw;
+        margin-bottom: 0;
+      }
+      &--pages {
+        min-width: 5vw;
+        max-width: 10vw;
+      }
+    }
+    &__img--placeholder {
+      grid-column-start: 4;
+      grid-row: 1 / 4;
+    }
+  }
+}
+@media screen and (min-width: map-get($map: $breakpoints, $key: "desktop")) {
+  .form-grid {
+    &__container {
+      &--published {
+        grid-column: 2 / 3;
+      }
+      &--pages {
+        grid-row-start: 4;
+        grid-column: 3 / 4;
+        justify-self: flex-end;
+      }
+    }
+  }
+}

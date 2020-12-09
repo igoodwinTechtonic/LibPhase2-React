@@ -1,53 +1,69 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 // import Page from './components/Page';
-import HomePage from "./components/HomePage";
-import BookshelfPage from "./components/BookshelfPage";
+import HomePage from "./pages/HomePage";
+import BookshelfPage from "./pages/BookshelfPage";
+import BookDetailsPage from "./pages/BookDetailsPage";
+import AddEditBookPage from "./pages/AddEditBookPage";
 import PageNotFound from "./components/PageNotFound";
 
-import axios from "axios";
+import { getBooks } from "./utils/API";
 // import shortid from "shortid";
 import { Books } from "./utils/Interfaces";
 import { BooksContext } from "./utils/BooksContext";
 
 // Main components in App, decides which page to render
 const App = (): JSX.Element => {
-  // Create state using interface of Books array
-  const [books, updateBooks] = useState<Books>([]);
+  // // Create state using interface of Books array
+  // const [books, updateBooks] = useState<Books>([]);
 
-  // API call to json server on initial page load to store books on client side
-  useEffect(() => {
-    axios
-      .get<Books>("http://localhost:3000/books/") // Ensures data received is Book[]
-      .then(({ data }) => {
-        updateBooks(data); // Update state from response.data
-        // console.log(data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  // // API call to json server on initial page load to store books on client side
+  // useEffect(() => {
+  //   getBooks()
+  //     .then(({ data }) => updateBooks(data)) // Update state from response.data
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   // USE CONTEXT API TO PASS BOOKS[] TO CHILD COMPONENTS!
 
   // CONTAIN THE BOOKS CONTEXT IN A BooksContext.ts FILE
 
   return (
-    <div id="wrapper">
-      <Header />
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        {/* IMPLEMENT A PROVIDER TO PASS STATE TO BOOKSHELF AND DETAILS AND EDIT */}
-        <BooksContext.Provider value={books}>
-          <Route path="/bookshelf" component={BookshelfPage} />
-          {/* <Route path="/bookshelf/:slug" component={DetailsPage} /> */}
-          {/* The :slug is received as props.match.params.slug */}
-        </BooksContext.Provider>
-        <Route component={PageNotFound} />
-      </Switch>
-      <Footer />
-    </div>
+    <Router>
+      <div id="wrapper">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          {/* IMPLEMENT A PROVIDER TO PASS STATE TO BOOKSHELF AND DETAILS AND EDIT */}
+          {/* <BooksContext.Provider value={books}> */}
+          <Route exact path="/bookshelf">
+            <BookshelfPage />
+          </Route>
+          <Route path="/book/:id">
+            <BookDetailsPage />
+          </Route>
+          <Route path={["/add", "/edit/:id"]}>
+            <AddEditBookPage />
+          </Route>
+          {/* <Route path="/add">
+              <AddPage />
+            </Route>
+            <Route path="/edit">
+              <EditPage />
+            </Route> */}
+          {/* </BooksContext.Provider> */}
+          <Route>
+            <PageNotFound />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 
   /* conditionally rendering bookshelf based on data from api call

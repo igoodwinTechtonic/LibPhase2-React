@@ -1,12 +1,13 @@
 {
   "books": [
     {
-      "id": "Z26HR-oBN",
+      "id": "1",
+      "key": "Z26HR-oBN",
       "title": "Theft of Swords",
       "author": "Michael J. Sullivan",
       "pubDate": "November 3, 2011",
       "pages": 664,
-      "image": "riyria_trilogy_1_theft_of_swords.jpg",
+      "image": "/riyria_trilogy_1_theft_of_swords.jpg",
       "rating": 3,
       "description": [
         "Royce Melborn, a skilled, thief, and his mercenary partner, Hadrian Blackwater, make a profitable living carrying out dangerous assignments for conspiring nobles – until they are hired to pilfer a famed Sword. What appears to be just a simple job finds them framed for the murder of the kind and trapped in a conspiracy that uncovers a plot far greater than the mere overthrow of a tiny kingdom.",
@@ -15,12 +16,13 @@
       ]
     },
     {
-      "id": "uzEf9wqahT",
+      "id": "2",
+      "key": "uzEf9wqahT",
       "title": "Rise of Empire",
       "author": "Michael J. Sullivan",
       "pubDate": "December 1, 2011",
       "pages": 781,
-      "image": "riyria_trilogy_2_rise_of_empire.jpg",
+      "image": "/riyria_trilogy_2_rise_of_empire.jpg",
       "rating": 4,
       "description": [
         "The adventure continues as Royce and Hadrian aid the struggling kingdom of Melengar as it along stands . in defiance against the newly formed empire. War approaches and a desperate gamble behind enemy lines is their only chance at forming an alliance with the Nationalists to the south.",
@@ -28,54 +30,59 @@
       ]
     },
     {
-      "id": "USeGNc30Rv",
+      "id": "3",
+      "key": "USeGNc30Rv",
       "title": "Heir of Novron",
       "author": "Michael J. Sullivan",
       "pubDate": "January 26, 2012",
       "pages": 928,
-      "image": "riyria_trilogy_3_heir_of_novron.jpg",
+      "image": "/riyria_trilogy_3_heir_of_novron.jpg",
       "rating": 5,
       "description": [
         "The New Empire intends to mark its victory over the Nationalists with a bloody celebration. On the high holiday of Wintertide, the Witch of Melengar will be burned with the Heir of Novron executed. On that same day the empress faces a forced marriage, with a fatal accident soon to follow. The New Empire is confident in the totality of its triump but there's just one problem – Royce and Hadrian have finally found the true Heir of Novron."
       ]
     },
     {
-      "id": "wmCnDZaF9o",
+      "id": "4",
+      "key": "wmCnDZaF9o",
       "title": "The Fellowship of The Ring",
       "author": "J. R. R. Tolkien",
       "pubDate": "July 29, 1954",
       "pages": 423,
-      "image": "lotr_fellowship_of_the_ring.jpg",
+      "image": "/lotr_fellowship_of_the_ring.jpg",
       "rating": 2,
       "description": []
     },
     {
-      "id": "U3mH3QlmM",
+      "id": "5",
+      "key": "U3mH3QlmM",
       "title": "The Two Towers",
       "author": "J. R. R. Tolkien",
       "pubDate": "November 11, 1954",
       "pages": 352,
-      "image": "lotr_two_towers.jpg",
+      "image": "/lotr_two_towers.jpg",
       "rating": 3,
       "description": []
     },
     {
-      "id": "1h5y3nfGUl",
+      "id": "6",
+      "key": "1h5y3nfGUl",
       "title": "Return of The King",
       "author": "J. R. R. Tolkien",
       "pubDate": "October 20, 1955",
       "pages": 416,
-      "image": "lotr_return_of_the_king.jpg",
+      "image": "/lotr_return_of_the_king.jpg",
       "rating": 1,
       "description": []
     },
     {
-      "id": "6uEnUejpqA",
+      "id": "7",
+      "key": "6uEnUejpqA",
       "title": "Windhaven",
       "author": "George R. R. Martin & Lisa Tuttle",
       "pubDate": "1981",
       "pages": 368,
-      "image": "windhaven.jpg",
+      "image": "/windhaven.jpg",
       "rating": 4,
       "description": [
         "Among the scattered islands that make up the water world of Windhaven, no one holds more prestige than the silver-winged flyers who cross the treacherous oceans to bring news, gossip and stories to all.",

@@ -11,6 +11,7 @@
   .search-bookshelf {
     display: flex;
     background-color: lightgrey;
+    margin-top: 68px;
 
     &__label {
       display: none;
@@ -24,7 +25,7 @@
       border-radius: 8px;
       border: 2px solid lightgrey;
 
-      // background-image: url('../../src/images/search-icon.png');
+      background-image: url("../../src/images/search-icon.png");
       background-repeat: no-repeat;
       background-size: 25px;
       background-position: 10px;
